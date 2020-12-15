@@ -30,6 +30,7 @@ public class MinBucket {
 		return min;
 	}
 	
+	// hello
 	private void dfs(int[] nums, int k, int idx, int count, int bucket, int curSum) {
 		// base case - success
 		if (count == nums.length && curSum <= k) {
