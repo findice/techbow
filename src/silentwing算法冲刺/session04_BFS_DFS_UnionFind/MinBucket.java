@@ -25,7 +25,6 @@ public class MinBucket {
 				return 0;
 			}
 		}
-		String str = "null";
 		dfs(nums, k, 0, 0, 1, 0);
 		return min;
 	}

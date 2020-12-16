@@ -54,7 +54,4 @@ public class JobScheduler { // TODO
 			return result;
 		}
 	}
-	
-	
-	
 }
