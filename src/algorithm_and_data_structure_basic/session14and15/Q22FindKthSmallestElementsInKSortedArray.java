@@ -20,10 +20,10 @@ public class Q22FindKthSmallestElementsInKSortedArray {
 		}
 		int numElements = 0;
 		int tempMax = Integer.MIN_VALUE;
-		for (int i = 0; i < matrix.length; i++) {
-			if (matrix[i] != null && matrix[i].length > 0) {
-				tempMax = Math.max(matrix[i][matrix[i].length - 1], tempMax);
-				numElements += matrix[i].length;
+		for (int[] row : matrix) {
+			if (row != null && row.length > 0) {
+				tempMax = Math.max(row[row.length - 1], tempMax);
+				numElements += row.length;
 			}
 		}
 		if (k > numElements) {
