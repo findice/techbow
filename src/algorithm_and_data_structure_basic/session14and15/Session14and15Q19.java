@@ -7,10 +7,11 @@ import java.util.List;
 /*Find common elements in two arrays*/
 public class Session14and15Q19 {
 	/*
-	 * Solution 1: using 2 pointers to traverse the 2 arrays to find the common
+	 * Solution 1: using 2 pointers, T(m,n) = O(m + n)
+	 *  using 2 pointers to traverse the 2 arrays to find the common
 	 * elements in 2 arrays Precondition: 2 arrays are sorted
 	 */
-	public static int[] twoPointersFindCommon(int[] arr1, int[] arr2) {
+	public static List<Integer> twoPointersFindCommon(int[] arr1, int[] arr2) {
 		// corner case
 		if (arr1 == null || arr1.length == 0 || arr2 == null || arr2.length == 0) {
 			return null;
@@ -31,15 +32,12 @@ public class Session14and15Q19 {
 				i++;
 			}
 		}
-		int[] result = new int[list.size()];
-		for (int k = 0; k < list.size(); k++) {
-			result[k] = list.get(k);
-		}
-		return result;
+		return list;
 	}
 
 	/*
-	 * Solution 2: using binary Search to find common elements in 2 arrays
+	 * Solution 2: using binary Search
+	 * assuming arr1 is shorter than arr2
 	 * Precondition: larger arrays are sorted (or assign larger to the sorted array)
 	 */
 	public static List<Integer> binarySearchFindCommon(int[] arr1, int[] arr2) {
@@ -98,12 +96,12 @@ public class Session14and15Q19 {
 		}
 		HashSet<Integer> set = new HashSet<>();
 		List<Integer> result = new ArrayList<>();
-		for (int i = 0; i < arr1.length; i++) {
-			set.add(arr1[i]);
+		for (int j : arr1) {
+			set.add(j);
 		}
-		for (int i = 0; i < arr2.length; i++) {
-			if (set.contains(arr2[i])) {
-				result.add(arr2[i]);
+		for (int j : arr2) {
+			if (set.contains(j)) {
+				result.add(j);
 			}
 		}
         return result;

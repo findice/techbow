@@ -2,7 +2,7 @@ package algorithm_and_data_structure_basic.session14and15;
 
 import java.util.Arrays;
 
-public class Session14and15Q21Test {
+public class Q22Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -77,7 +77,7 @@ public class Session14and15Q21Test {
 			System.out.print("]");
 			System.out.println();
 		}
-		int result = Session14and15Q21.kthSmallest(matrix, k);
+		int result = new Q22FindKthSmallestElementsInKSortedArray().kthSmallest(matrix, k);
 		System.out.println(k + "th smallest element in matrix by method 1: " + result);
 		System.out.println();
 	}

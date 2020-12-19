@@ -1,6 +1,7 @@
 package algorithm_and_data_structure_basic.session14and15;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Session14and15Q19Test {
 
@@ -12,21 +13,20 @@ public class Session14and15Q19Test {
 		int[] arr4 = { 5, 6 };
 		test(arr1, arr2);
 		test(arr3, arr4);
-		return;
 	}
 
 	public static void test(int[] arr1, int[] arr2) {
 		System.out.println("Original array1: " + Arrays.toString(arr1));
 		System.out.println("Original array2: " + Arrays.toString(arr2));
 
-		int[] result1 = Session14and15Q19.twoPointersFindCommon(arr1, arr2);
-		System.out.println("find common elements by 2 pointers: " + Arrays.toString(result1));
-
-		int[] result2 = Session14and15Q19.twoPointersFindCommon(arr1, arr2);
-		System.out.println("find common elements by 2 pointers: " + Arrays.toString(result2));
-
-		int[] result3 = Session14and15Q19.twoPointersFindCommon(arr1, arr2);
-		System.out.println("find common elements by 2 pointers: " + Arrays.toString(result3));
+		List<Integer> result1 = Session14and15Q19.twoPointersFindCommon(arr1, arr2);
+		System.out.println("find common elements by 2 pointers: " + result1);
+		
+		List<Integer> result2 = Session14and15Q19.twoPointersFindCommon(arr1, arr2);
+		System.out.println("find common elements by 2 pointers: " + result2);
+		
+		List<Integer> result3 = Session14and15Q19.twoPointersFindCommon(arr1, arr2);
+		System.out.println("find common elements by 2 pointers: " + result3);
 		System.out.println();
 
 	}

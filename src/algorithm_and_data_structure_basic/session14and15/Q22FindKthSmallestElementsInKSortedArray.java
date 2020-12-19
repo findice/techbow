@@ -2,11 +2,15 @@ package algorithm_and_data_structure_basic.session14and15;
 
 import java.util.PriorityQueue;
 
-public class Session14and15Q21 {
+/*
+一个二维matrix，每一行都是sorted，可能有duplicates
+让你找这个所有数字里面的第k大的数字
+ */
+public class Q22FindKthSmallestElementsInKSortedArray {
 
 	// case 1: int[][]不是一个长方形，每一行的长度不一定一样
 	// 每次找出剩下的需要找的数量的前 / rows个
-	public static int kthSmallest(int[][] matrix, int k) {
+	public int kthSmallest(int[][] matrix, int k) {
 		// corner case
 		if (matrix == null || matrix.length == 0) {
 			return Integer.MAX_VALUE;
@@ -84,23 +88,23 @@ public class Session14and15Q21 {
 		}
 
 		// 每次只能往后面找一个的时候，改用BFS minHeap做
-		PriorityQueue<Cell21> minHeap = new PriorityQueue<>(rows);
+		PriorityQueue<Cell> minHeap = new PriorityQueue<>(rows);
 		for (Integer i : leftRows) {
 			if (i == null) {
 				continue;
 			}
-			minHeap.add(new Cell21(i, colIndex[i] + 1, matrix[i][colIndex[i] + 1]));
+			minHeap.add(new Cell(i, colIndex[i] + 1, matrix[i][colIndex[i] + 1]));
 		}
 		int row;
 		int col;
-		Cell21 temp;
+		Cell temp;
 		for (int i = rank + 1; i < k; i++) {
 			temp = minHeap.poll();
 			row = temp.row;
 			col = temp.col;
 			// 往右加一个数字
 			if (col < matrix[row].length - 1) {
-				minHeap.offer(new Cell21(row, col + 1, matrix[row][col + 1]));
+				minHeap.offer(new Cell(row, col + 1, matrix[row][col + 1]));
 			}
 		}
 		temp = minHeap.poll();
@@ -108,37 +112,24 @@ public class Session14and15Q21 {
 		col = temp.col;
 		return matrix[row][col];
 	}
+	
+	static class Cell implements Comparable<Cell> {
+		int row;
+		int col;
+		int val;
+	
+		public Cell(int row, int col, int val) {
+			this.row = row;
+			this.col = col;
+			this.val = val;
+		}
+	
+		@Override
+		public int compareTo(Cell o) {
+			// TODO Auto-generated method stub
+			return this.val - o.val;
+		}
+	}
 }
 
 
-class Cell21 implements Comparable<Cell21> {
-	int row;
-	int col;
-	int val;
-
-	public Cell21(int row, int col, int val) {
-		this.row = row;
-		this.col = col;
-		this.val = val;
-	}
-
-	@Override
-	public boolean equals(Object object) {
-		// corner case
-		if (this == null || object == null || !(object instanceof Cell21)) {
-			return false;
-		}
-		Cell21 obj = (Cell21) object;
-		if (this == obj || (this.row == obj.row && this.col == obj.col)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	@Override
-	public int compareTo(Cell21 o) {
-		// TODO Auto-generated method stub
-		return this.val - o.val;
-	}
-}
