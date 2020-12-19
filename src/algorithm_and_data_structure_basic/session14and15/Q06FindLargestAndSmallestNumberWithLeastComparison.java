@@ -1,9 +1,10 @@
 package algorithm_and_data_structure_basic.session14and15;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-/*Given unsorted array, find largest and smallest number with least comparision*/
-public class Session14and15Q06 {
+/*Given unsorted array, find largest and smallest number with least comparison*/
+public class Q06FindLargestAndSmallestNumberWithLeastComparison {
 	/*
 	 * 要求使得比较的次数最少，类似优化某一个api. 两两比较，大的放一组，小的放一组。然后从大的组里找出最大的，小的组里找出最小的。但是要注意奇偶的情况。
 	 * 这样的话，比较的次数是n/2+n/2+n/2 = 3n/2. 第一次比较是n/2，然后在大的group里面for
@@ -54,5 +55,26 @@ public class Session14and15Q06 {
 		}
 
 		return res;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums1 = new int[] { 1 };
+		int[] nums2 = new int[] { 1, 2 };
+		int[] nums3 = new int[] { 1, 2, 3 };
+		int[] nums4 = new int[] { 1, 2, 3, 4 };
+		test(nums1);
+		test(nums2);
+		test(nums3);
+		test(nums4);
+		return;
+	}
+	
+	private static void test(int[] nums) {
+		System.out.println("Original Array: " + Arrays.toString(nums));
+		int[] newNums = findMinMax(nums);
+		System.out.println("min of arrays: " + newNums[0]);
+		System.out.println("max of arrays: " + newNums[1]);
+		System.out.println();
 	}
 }

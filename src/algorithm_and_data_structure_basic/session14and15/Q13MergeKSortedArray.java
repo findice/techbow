@@ -1,10 +1,11 @@
 package algorithm_and_data_structure_basic.session14and15;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /*Merge K sorted array*/
-public class Session14and15Q13 {
+public class Q13MergeKSortedArray {
 
 	// Solution 1: use minHeap to find the min in the k nums
 	public static int[] mergeKSortedArrayByMinHeap(int[][] nums) {
@@ -12,22 +13,22 @@ public class Session14and15Q13 {
 			return new int[] {};
 		}
 
-		PriorityQueue<Cell13> minHeap = new PriorityQueue<>(nums.length, new MyComparator13());
+		PriorityQueue<Cell> minHeap = new PriorityQueue<>(nums.length, new MyComparator());
 
 		int rows = 0;
 		for (int i = 0; i < nums.length; i++) {
 			rows += nums[i].length;
 			if (nums[i] != null && nums[i].length != 0) {
-				minHeap.offer(new Cell13(i, 0, nums[i][0]));
+				minHeap.offer(new Cell(i, 0, nums[i][0]));
 			}
 		}
 		int[] res = new int[rows];
 		int curIndex = 0;
 		while (!minHeap.isEmpty()) {
-			Cell13 curCell = minHeap.poll();
+			Cell curCell = minHeap.poll();
 			res[curIndex++] = curCell.val;
 			if (curCell.col + 1 < nums[curCell.row].length) {
-				minHeap.offer(new Cell13(curCell.row, curCell.col + 1,
+				minHeap.offer(new Cell(curCell.row, curCell.col + 1,
 						nums[curCell.row][curCell.col + 1]));
 			}
 		}
@@ -84,23 +85,42 @@ public class Session14and15Q13 {
 		}
 		return temp;
 	}
-
-}
-
-class MyComparator13 implements Comparator<Cell13> {
-	public int compare(Cell13 c1, Cell13 c2) {
-		return c1.val - c2.val;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] nums1 = { { 1, 4, 8 }, { 3, 10, 100, 101, 102 }, { 2, 3, 4 }, { 9, 65, 78 },
+				{ 22, 23, 54, 76 } };
+		int[][] nums2 = { { 1, 5, 6 }, { 2, 8, 9, 10 }, { 64, 19, 20, 30 }, { 345, 135, 289 } };
+		test(nums1);
+		test(nums2);
+		return;
+	}
+	
+	private static void test(int[][] nums) {
+		int[] res1 = mergeKSortedArrayByMinHeap(nums);
+		System.out.println("Original arrays: " + Arrays.deepToString(nums));
+		System.out.println("Merged Arrays Solution 1: " + Arrays.toString(res1));
+		int[] res2 = mergeKSortedArrayByBinaryMerge(nums);
+		System.out.println("Merged Arrays Solution 2: " + Arrays.toString(res2));
+		System.out.println();
+	}
+	
+	static class Cell {
+		int row;
+		int col;
+		int val;
+	
+		public Cell(int row, int col, int val) {
+			this.row = row;
+			this.col = col;
+			this.val = val;
+		}
+	}
+	
+	static class MyComparator implements Comparator<Cell> {
+		public int compare(Cell c1, Cell c2) {
+			return c1.val - c2.val;
+		}
 	}
 }
 
-class Cell13 {
-	int row;
-	int col;
-	int val;
-
-	public Cell13(int row, int col, int val) {
-		this.row = row;
-		this.col = col;
-		this.val = val;
-	}
-}
