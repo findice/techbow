@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 
 /* Sort an array by the order defined by the first/last occurrence */
-public class Q11SortArrayByTheFirstOrLastOccurrence {
+public class Q11SortArrayByTheFirstOccurrence {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -95,14 +95,13 @@ public class Q11SortArrayByTheFirstOrLastOccurrence {
 			occur = new HashMap<>();
 			for (int i = 0; i < nums.length; i++) {
 				if (!occur.containsKey(nums[i])) {
-					occur.put(nums[i], Integer.valueOf(i));
+					occur.put(nums[i], i);
 				}
 			}
 		}
 		
 		@Override
 		public int compare(Integer o1, Integer o2) {
-			// TODO Auto-generated method stub
 			return occur.get(o1) - occur.get(o2);
 		}
 	}
