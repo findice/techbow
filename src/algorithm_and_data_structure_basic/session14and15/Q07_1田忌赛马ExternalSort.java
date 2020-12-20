@@ -95,7 +95,7 @@ public class Q07_1田忌赛马ExternalSort {
 		return res;
 	}
 	
-	static class Cell implements Comparable<Cell> {
+	static class Cell {
 		int row;
 		int col;
 		int val;
@@ -104,11 +104,6 @@ public class Q07_1田忌赛马ExternalSort {
 			this.row = row;
 			this.col = col;
 			this.val = val;
-		}
-	
-		@Override
-		public int compareTo(Cell o) {
-			return this.val - o.val;
 		}
 	}
 	
