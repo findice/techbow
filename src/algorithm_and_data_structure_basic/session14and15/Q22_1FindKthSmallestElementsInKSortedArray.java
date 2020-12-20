@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 一个二维matrix，每一行都是sorted，可能有duplicates
 让你找这个所有数字里面的第k大的数字
  */
-public class Q22FindKthSmallestElementsInKSortedArray {
+public class Q22_1FindKthSmallestElementsInKSortedArray {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -63,7 +63,6 @@ public class Q22FindKthSmallestElementsInKSortedArray {
 		test(matrix3, k2);
 		test(matrix3, k3);
 		test(matrix4, 2);
-		return;
 	}
 	
 	private static void test(int[][] matrix, int k) {
@@ -82,7 +81,7 @@ public class Q22FindKthSmallestElementsInKSortedArray {
 			System.out.print("]");
 			System.out.println();
 		}
-		int result = new Q22FindKthSmallestElementsInKSortedArray().kthSmallest(matrix, k);
+		int result = new Q22_1FindKthSmallestElementsInKSortedArray().kthSmallest(matrix, k);
 		System.out.println(k + "th smallest element in matrix by method 1: " + result);
 		System.out.println();
 	}
