@@ -8,7 +8,6 @@ import java.util.HashMap;
 public class Q11SortArrayByTheFirstOccurrence {
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Integer[] nums = {1, 2, 3, 4, 6, 8, 5, 1, 2, 3};
 		test(nums);
 	}
