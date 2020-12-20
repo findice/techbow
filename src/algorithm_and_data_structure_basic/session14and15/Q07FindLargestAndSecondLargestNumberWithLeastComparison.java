@@ -39,6 +39,7 @@ public class Q07FindLargestAndSecondLargestNumberWithLeastComparison {
 	// preconditions: no duplicates, Total comparisons: n+log2(n)-2;
 	
 	/**
+	 * 比较了n-1+log2(n)次，T(n) = Θ(n + log(n))
 	 * S2: divide and conquer
 	 * 1
 	 * 2    2[1]
