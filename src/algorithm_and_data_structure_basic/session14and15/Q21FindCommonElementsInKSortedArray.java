@@ -29,7 +29,7 @@ public class Q21FindCommonElementsInKSortedArray {
 				{1,3,5,7,9}
 		};
 		List<Integer> commonElements =
-				new Q21FindCommonElementsInKSortedArray().commonElements2(nums);
+				new Q21FindCommonElementsInKSortedArray().commonElementsByBinaryReduction(nums);
 		System.out.println(commonElements);
 	}
 	
@@ -38,7 +38,7 @@ public class Q21FindCommonElementsInKSortedArray {
 	k个pointer，谁的元素小，移动谁，
 	pointer指向的所有元素大小都一样的时候，就是common element了, base case: 有一个pointer走到底的时候
 	 */
-	public List<Integer> commonElements1(int[][] nums) {
+	public List<Integer> commonElementsByKPointers(int[][] nums) {
 		List<Integer> res = new ArrayList<>();
 		// corner case
 		if (nums == null || nums.length == 0 || nums[0] == null || nums[0].length == 0) {
@@ -80,7 +80,7 @@ public class Q21FindCommonElementsInKSortedArray {
 	
 	// binary reduction, T(rows, cols) = O(rows * cols)， S(rows, cols) = O(rows * cols)
 	// 每两行之间算出common elements，repeat
-	public List<Integer> commonElements2(int[][] nums) {
+	public List<Integer> commonElementsByBinaryReduction(int[][] nums) {
 		List<Integer> res = new ArrayList<>();
 		// corner case
 		if (nums == null || nums.length == 0 || nums[0] == null || nums[0].length == 0) {

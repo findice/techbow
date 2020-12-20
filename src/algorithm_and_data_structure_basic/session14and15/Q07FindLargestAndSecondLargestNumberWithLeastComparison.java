@@ -37,6 +37,24 @@ public class Q07FindLargestAndSecondLargestNumberWithLeastComparison {
 	}
 	
 	// preconditions: no duplicates, Total comparisons: n+log2(n)-2;
+	
+	/**
+	 * S2: divide and conquer
+	 * 1
+	 * 2    2[1]
+	 * 3
+	 * 4    3[4]     3[4, 2]
+	 * 5
+	 * 6    5[6]
+	 * 7
+	 * 8    8[7]     5[6, 8]	3[4,2,5]
+	 *
+	 * n/2 + n/4 + … + 2 + 1 = n - 1
+	 * n-1 + logn
+	 *
+	 * @param nums given int array
+	 * @return the largest and 2nd largest number
+	 */
 	public static int[] firstTwoLargest(int[] nums) {
 		// corner case
 		if (nums == null || nums.length < 2) {
