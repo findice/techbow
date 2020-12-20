@@ -35,7 +35,7 @@ public class Q06FindLargestAndSmallestNumberWithLeastComparison {
 	 */
 	
 	public static int[] findMinMax(int[] nums) {
-		if (nums == null || nums.length < 2) {
+		if (nums == null || nums.length == 0) {
 			return null;
 		}
 		Queue<Integer> queue = new LinkedList<>();
