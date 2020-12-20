@@ -57,7 +57,7 @@ public class Q11SortArrayByTheFirstOccurrence {
 		HashMap<Integer, Integer> occur = new HashMap<>();
 		for (int i = 0; i < nums.length; i++) {
 			if (!occur.containsKey(nums[i])) {
-				occur.put(nums[i], Integer.valueOf(i));
+				occur.put(nums[i], i);
 			}
 		}
 		Arrays.sort(nums, new Comparator<Integer>() {
@@ -79,7 +79,7 @@ public class Q11SortArrayByTheFirstOccurrence {
 		HashMap<Integer, Integer> occur = new HashMap<>();
 		for (int i = 0; i < nums.length; i++) {
 			if (!occur.containsKey(nums[i])) {
-				occur.put(nums[i], Integer.valueOf(i));
+				occur.put(nums[i], i);
 			}
 		}
 		Arrays.sort(nums, (o1, o2) -> occur.get(o1) - occur.get(o2));
