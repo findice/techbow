@@ -79,7 +79,6 @@ public class Q07FindLargestAndSecondLargestNumberWithLeastComparison {
 		test(nums3);
 		test(nums4);
 		test(nums5);
-		return;
 	}
 	
 	private static void test(int[] nums) {
