@@ -14,8 +14,8 @@ public class Q22FindKthSmallestElementsIn2SortedArray {
 	
 	public static void main(String[] args) {
 		random = new Random();
-		int maxLen1 = 10;
-		int maxLen2 = 15;
+		int maxLen1 = 20;
+		int maxLen2 = 20;
 		int maxVal = 100;
 		test(maxLen1, maxLen2, maxVal);
 	}
