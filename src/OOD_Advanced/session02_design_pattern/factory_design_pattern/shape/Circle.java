@@ -1,4 +1,4 @@
-package OOD_Advanced.session02_design_pattern.factory_design_pattern;
+package OOD_Advanced.session02_design_pattern.factory_design_pattern.shape;
 
 public class Circle extends Shape {
 	

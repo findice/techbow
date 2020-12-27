@@ -1,5 +1,7 @@
 package OOD_Advanced.session02_design_pattern.factory_design_pattern;
 
+import OOD_Advanced.session02_design_pattern.factory_design_pattern.shape.ShapeType;
+
 //Project: techbow
 //Package: OODAdvanced.session02DesignPattern.factoryDesignPattern
 //ClassName: FactoryPattern
@@ -10,8 +12,9 @@ public class FactoryPattern {
 	
 	public static void main(String[] args) {
 		DrawingClient client = new DrawingClient();
-		client.draw(ShapeType.Triangle);
-		client.draw(ShapeType.Circle);
+		client.draw(ShapeType.TRIANGLE);
+		client.draw(ShapeType.CIRCLE);
+		client.draw(ShapeType.SQUARE);
 	}
 }
 
