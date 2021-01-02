@@ -21,7 +21,7 @@ public class Q11SortArrayByTheFirstOccurrence {
 		nums = Arrays.copyOf(temp, temp.length);
 		System.out.println();
 		
-		System.out.println("Oringinal array:	" + Arrays.deepToString(nums));
+		System.out.println("Oringinal array:    " + Arrays.deepToString(nums));
 		sort2(nums);
 		System.out.println("After sort2, array:	" + Arrays.deepToString(nums));
 		nums = Arrays.copyOf(temp, temp.length);
