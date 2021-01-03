@@ -27,7 +27,10 @@ public class Q13MergeKSortedArray {
 	}
 	
 	// Solution 1: use minHeap to find the min in the k nums
-	// assuming n is rows, m is cols, T(n, m) = O(n * m * log(n)), S(n, m) = O(n * m)
+	/**
+	 assuming k is rows, n is summed number of elements in all int[]
+	 T(k, n) = O(n * log(k)), S(n, m) = O(n)
+	 */
 	public static int[] mergeKSortedArrayByMinHeap(int[][] nums) {
 		if (nums == null || nums.length == 0 || nums[0] == null || nums[0].length == 0) {
 			return new int[] {};
@@ -74,6 +77,8 @@ public class Q13MergeKSortedArray {
 	
 	/**
 	Solution 2: use binary merge to form the merged int[][]
+    assuming k is rows, n is summed number of elements in all int[]
+    T(k, n) = O(n * log(k)), S(n, m) = O(n)
 	 */
 	public static int[] mergeKSortedArrayByBinaryMerge(int[][] nums) {
 		if (nums == null || nums.length == 0) {
