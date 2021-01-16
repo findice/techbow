@@ -59,6 +59,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../leetcode_practice/src/leetcode/editor/en/Leetcode0347TopKFrequentElements.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/../leetcode_practice/src/leetcode/editor/en/Leetcode0347TopKFrequentElements.java" />
+              <option name="questionId" value="347" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../leetcode_practice/src/leetcode/editor/en/Leetcode0377CombinationSumIv.java">
           <value>
             <LeetcodeEditor>
@@ -67,11 +75,27 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../leetcode_practice/src/leetcode/editor/en/Leetcode0378KthSmallestElementInASortedMatrix.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/../leetcode_practice/src/leetcode/editor/en/Leetcode0378KthSmallestElementInASortedMatrix.java" />
+              <option name="questionId" value="378" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../leetcode_practice/src/leetcode/editor/en/Leetcode0554BrickWall.java">
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/../leetcode_practice/src/leetcode/editor/en/Leetcode0554BrickWall.java" />
               <option name="questionId" value="554" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../leetcode_practice/src/leetcode/editor/en/Leetcode0692TopKFrequentWords.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/../leetcode_practice/src/leetcode/editor/en/Leetcode0692TopKFrequentWords.java" />
+              <option name="questionId" value="692" />
             </LeetcodeEditor>
           </value>
         </entry>

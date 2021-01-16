@@ -28,6 +28,10 @@ ver[6][6] = 1  0  1  1  1  1
             1  3  5  0  2  0
             0  0  6  0  0  0
  */
+
+/*
+找最大的正方形，可以空心
+ */
 class FindLargestSquareSurroundedBy1 {
     
     public static void main(String[] args) {
