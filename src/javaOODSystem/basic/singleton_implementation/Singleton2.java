@@ -6,6 +6,7 @@ package javaOODSystem.basic.singleton_implementation;
 //Description:
 //Author: Zeshi(Jesse) Yang
 //Date: 2020-09-03 星期四 20:53
+
 public class Singleton2 {
 	
 	private static final Singleton2 INSTANCE = new Singleton2();

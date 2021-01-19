@@ -6,9 +6,10 @@ package javaOODSystem.basic.singleton_implementation;
 //Description:
 //Author: Zeshi(Jesse) Yang
 //Date: 2020-09-02 星期三 19:54
-
-
-
+/*
+全局唯一
+全局可访问
+ */
 public class Singleton {
 	
 	private static Singleton instance;
