@@ -11,7 +11,7 @@ import OOD_Advanced.session02_design_pattern.factory_design_pattern.abstract_fac
 //ClassName: ApplePhoneFactory
 //Author: Zeshi(Jesse) Yang
 //Date: 2021-01-18 星期一 20:51
-public class AppleFactory implements AbstractPhoneFactory, AbstractRouterFactory {
+public class AppleFactory implements AbstractFactory {
     
     @Override
     public Phone makePhone() {
