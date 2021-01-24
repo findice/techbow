@@ -109,7 +109,6 @@ public class Q19CommonElementsIn2Arrays {
     }
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] arr1 = { 5, 7, 9, 10, 13, 15 };
 		int[] arr2 = { 6, 7, 11, 13, 15 };
 		int[] arr3 = { 2 };

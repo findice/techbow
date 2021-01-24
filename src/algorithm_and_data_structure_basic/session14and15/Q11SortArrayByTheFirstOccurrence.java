@@ -63,7 +63,6 @@ public class Q11SortArrayByTheFirstOccurrence {
 		Arrays.sort(nums, new Comparator<Integer>() {
 			@Override
 			public int compare(Integer o1, Integer o2) {
-				// TODO Auto-generated method stub
 				return occur.get(o1) - occur.get(o2);
 			}
 		});

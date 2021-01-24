@@ -10,7 +10,6 @@ import java.util.PriorityQueue;
 public class Q22_1FindKthSmallestElementsInKSortedArray {
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[][] matrix1 = new int[][] {
 			{2,	2,	7,	8,	8,	12},
             {4,	9,	9,	11},
@@ -204,7 +203,6 @@ public class Q22_1FindKthSmallestElementsInKSortedArray {
 	
 		@Override
 		public int compareTo(Cell o) {
-			// TODO Auto-generated method stub
 			return this.val - o.val;
 		}
 	}

@@ -20,10 +20,10 @@ package silentwing算法冲刺.session03_graph;
  */
 public class JobScheduler { // TODO
 	
-	private class Project {
+	private static class Project {
 		
-		private int id; // 0.. n-1
-		private int duration;
+		private final int id; // 0.. n-1
+		private final int duration;
 		
 		public Project(int id, int duration) {
 			this.id = id;

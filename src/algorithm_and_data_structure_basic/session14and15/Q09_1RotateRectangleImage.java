@@ -6,7 +6,6 @@ import java.util.Arrays;
 public class Q09_1RotateRectangleImage {
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[][] nums1 = new int[5][];
 		nums1[0] = new int[]{7, 4, 1, 1, 3};
 		nums1[1] = new int[]{8, 5, 2, 2, 3};
@@ -15,9 +14,7 @@ public class Q09_1RotateRectangleImage {
 		nums1[4] = new int[5];
 		int[][] nums2 = new int[5][5];
 		for (int i = 0; i < nums1.length; i++) {
-			for (int j = 0; j < nums1.length; j++) {
-				nums2[i][j] = nums1[i][j];
-			}
+			System.arraycopy(nums1[i], 0, nums2[i], 0, nums1.length);
 		}
 		test(nums1, 0, 0, 5, 3);
 		test(nums2, 0, 0, 4, 4);

@@ -9,7 +9,6 @@ import java.util.Queue;
 public class Q13MergeKSortedArray {
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[][] nums1 = { { 1, 4, 8 }, { 3, 10, 100, 101, 102 }, { 2, 3, 4 }, { 9, 65, 78 },
 				{ 22, 23, 54, 76 } };
 		int[][] nums2 = { { 1, 5, 6 }, { 2, 8, 9, 10 }, { 64, 19, 20, 30 }, { 345, 135, 289 } };
