@@ -1,4 +1,4 @@
-package algorithm_and_data_structure_advanced.session07_graph.topological_sort;//Project: techbow
+package algorithm_and_data_structure_basic.session02_sort_algorithm.topological_sort;//Project: techbow
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -27,7 +27,8 @@ public class TopologicalSort {
 	}
 	
 	/** return true if finding a cycle from Vertex cur*/
-	private boolean dfs(Vertex cur, HashMap<Vertex, List<Vertex>> graph, LinkedList<Vertex> res) {
+	private boolean dfs(
+            Vertex cur, HashMap<Vertex, List<Vertex>> graph, LinkedList<Vertex> res) {
 		if (cur.status == Status.VISITED) { // pruning
 			return false;
 		}

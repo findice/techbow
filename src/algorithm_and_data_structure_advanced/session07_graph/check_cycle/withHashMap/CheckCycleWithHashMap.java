@@ -25,7 +25,7 @@ public class CheckCycleWithHashMap {
 		return false;
 	}
 	
-	// 从后往前check
+	/** return true if finding a cycle from Vertex cur, 从后往前check*/
 	private boolean dfs(Vertex cur, HashMap<Vertex, List<Vertex>> graph, HashMap<Vertex,
 			Status> vertexStatus) {
 		if (vertexStatus.containsKey(cur) && vertexStatus.get(cur) == Status.VISITED) { // pruning

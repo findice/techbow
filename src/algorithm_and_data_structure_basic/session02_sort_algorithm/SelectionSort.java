@@ -13,7 +13,6 @@ import java.util.Arrays;
  */
 public final class SelectionSort {
     
-    // Driver code to test above
     public static void main(String[] args) {
         int[] nums = {64, 25, 12, 22, 11};
         System.out.println(Arrays.toString(nums));

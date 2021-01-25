@@ -1,13 +1,13 @@
-package algorithm_and_data_structure_basic.session02_sort_algorithm;
+package algorithm_and_data_structure_basic.session02_sort_algorithm.quick_sort;
 
 //Project: techbow
 //Package: algorithm_and_data_structure_basic.session02_sort_algorithm
 //ClassName: QuickSort
 //Author: Zeshi(Jesse) Yang
 //Date: 2021-01-22 星期五 23:41
-public class QuickSort {
+public class QuickSortWithLeftAndRightPointer {
     
-    public int[] sortArray(int[] nums) {
+    public static int[] sortArray(int[] nums) {
         // corner case
         if (nums == null || nums.length == 0) {
             return new int[0];
@@ -17,7 +17,7 @@ public class QuickSort {
         return nums;
     }
     
-    private void quickSort(int start, int end, int[] nums) {
+    private static void quickSort(int start, int end, int[] nums) {
         // base case
         if (start >= end) {
             return;
@@ -52,7 +52,7 @@ public class QuickSort {
         quickSort(left + 1, end, nums);
     }
     
-    private void swap(int[] array, int i, int j) {
+    private static void swap(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;

@@ -1,4 +1,4 @@
-package algorithm_and_data_structure_advanced.session07_graph.topological_sort;//Project: techbow
+package algorithm_and_data_structure_basic.session02_sort_algorithm.topological_sort;//Project: techbow
 
 import java.util.List;
 

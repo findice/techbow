@@ -1,5 +1,7 @@
 package algorithm_and_data_structure_basic.session02_sort_algorithm;
 
+import java.util.Arrays;
+
 //Project: techbow
 //Package: algorithm_and_data_structure_basic.session02_sort_algorithm
 //ClassName: MergeSort
@@ -7,7 +9,15 @@ package algorithm_and_data_structure_basic.session02_sort_algorithm;
 //Date: 2021-01-22 星期五 23:41
 public final class MergeSort {
     
-    public int[] sortArray(int[] nums) {
+    public static void main(String[] args) {
+        int[] nums = {12, 11, 13, 5, 6};
+        System.out.println(Arrays.toString(nums));
+        sortArray(nums);
+        System.out.println("after merge sort, array: ");
+        System.out.println(Arrays.toString(nums));
+    }
+    
+    public static int[] sortArray(int[] nums) {
         // corner case
         if (nums == null || nums.length <= 1) {
             return nums;
@@ -19,7 +29,7 @@ public final class MergeSort {
     }
     
     // merge sort the nums[start] to nums[end]
-    private void mergeSort(int start, int end, int[] nums, int[] helper) {
+    private static void mergeSort(int start, int end, int[] nums, int[] helper) {
         if (start == end) {
             return;
         }
@@ -30,7 +40,7 @@ public final class MergeSort {
     }
     
     // merge robFrom nums[start]- nums[mid], and nums[mid + 1] to nums[end]
-    private void merge(int start, int mid, int end, int[] nums, int[] helper) {
+    private static void merge(int start, int mid, int end, int[] nums, int[] helper) {
         int index = start;
         int left = start;
         int right = mid + 1;

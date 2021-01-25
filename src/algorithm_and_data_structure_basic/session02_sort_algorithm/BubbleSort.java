@@ -22,9 +22,9 @@ Now, since these elements are already in order (8 > 5), algorithm does not swap 
 /** Java program for implementation of Bubble Sort*/
 public final class BubbleSort {
     
-    // Driver method to test above
     public static void main(String[] args) {
         int[] nums = {64, 34, 25, 12, 22, 11, 90};
+        System.out.println(Arrays.toString(nums));
         bubbleSort(nums);
         System.out.println("after bubble sort, array: ");
         System.out.println(Arrays.toString(nums));

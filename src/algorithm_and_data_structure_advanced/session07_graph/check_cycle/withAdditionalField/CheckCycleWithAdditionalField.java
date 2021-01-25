@@ -27,7 +27,7 @@ public class CheckCycleWithAdditionalField {
 		return false;
 	}
 	
-	// 从后往前check
+	/** return true if finding a cycle from Vertex cur, 从后往前check*/
 	private boolean dfs(Vertex cur, HashMap<Vertex, List<Vertex>> graph) {
 		if (cur.status == Status.VISITED) { // pruning
 			return false;
