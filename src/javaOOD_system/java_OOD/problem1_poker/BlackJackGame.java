@@ -106,5 +106,10 @@ public class BlackJackGame {
 		}
 		System.out.println("no winner");
 	}
+	
+	public long getId() {
+		return id;
+	}
+	
 }
 
