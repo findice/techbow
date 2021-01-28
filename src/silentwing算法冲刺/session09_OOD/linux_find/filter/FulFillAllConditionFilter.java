@@ -28,9 +28,10 @@ public class FulFillAllConditionFilter extends AbstractFilter {
         Field[] fields = p.getClass().getDeclaredFields();
         for (Field field : fields) {
             try {
-                if (!field.get(p).equals(field.get(file))) {
+                if (!field.get(file).equals(field.get(p))) {
                     return false;
                 }
+                
             } catch (IllegalAccessException ignored) {
             }
         }
