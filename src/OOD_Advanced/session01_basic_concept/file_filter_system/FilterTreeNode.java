@@ -1,5 +1,8 @@
 package OOD_Advanced.session01_basic_concept.file_filter_system;
 
+import OOD_Advanced.session01_basic_concept.file_filter_system.filter_operator.FilterTreeOperator;
+import OOD_Advanced.session01_basic_concept.file_filter_system.fiter_condition.FilterCondition;
+
 public abstract class FilterTreeNode {
 	
 	private final FilterCondition condition; // 只有leaf才会有condition
