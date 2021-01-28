@@ -1,7 +1,7 @@
 package silentwing算法冲刺.session09_OOD.linux_find;
 
 import silentwing算法冲刺.session09_OOD.linux_find.entry.File;
-import silentwing算法冲刺.session09_OOD.linux_find.filter.FileFilter;
+import silentwing算法冲刺.session09_OOD.linux_find.filter.FulFillAllConditionFilter;
 
 //Project: techbow
 //Package: silentwing算法冲刺.session09_OOD.linux_find
@@ -15,7 +15,7 @@ public class LinuxFind {
         Parameter parameter = new Parameter();
         parameter.size = 1;
         parameter.type = "1";
-        FileFilter fileFilter = new FileFilter(parameter);
+        FulFillAllConditionFilter fileFilter = new FulFillAllConditionFilter(parameter);
         System.out.println(fileFilter.filterFiles(parameter, file));;
     }
 }

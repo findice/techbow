@@ -5,9 +5,9 @@ import silentwing算法冲刺.session09_OOD.linux_find.Parameter;
 import silentwing算法冲刺.session09_OOD.linux_find.entry.File;
 
 // Step 3: Inheritance
-public class FileFilter extends AbstractFilter {
+public class FulFillAllConditionFilter extends AbstractFilter {
     
-    public FileFilter(Parameter p) {
+    public FulFillAllConditionFilter(Parameter p) {
         super(p);
     }
     
