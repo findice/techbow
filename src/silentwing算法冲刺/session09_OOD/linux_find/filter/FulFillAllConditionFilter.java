@@ -25,7 +25,7 @@ public class FulFillAllConditionFilter extends AbstractFilter {
         }
         return false;*/
         // follow up
-        Field[] fields = p.getClass().getDeclaredFields();
+        Field[] fields = file.getClass().getDeclaredFields();
         for (Field field : fields) {
             try {
                 if (!field.get(file).equals(field.get(p))) {
