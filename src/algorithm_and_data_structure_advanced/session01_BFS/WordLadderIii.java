@@ -34,7 +34,8 @@ public class WordLadderIii {
 // n: 字典里单词个数，k:每个单词的长度
 class Solution {
 	
-	public List<String> findOneLadder(String beginWord, String endWord, List<String> wordList) {
+	public List<String> findOneLadder(String beginWord, String endWord, List<String> wordList)
+			throws RuntimeException {
 		// corner case
 		if (beginWord == null || endWord == null || wordList == null) {
 			throw new IllegalArgumentException();

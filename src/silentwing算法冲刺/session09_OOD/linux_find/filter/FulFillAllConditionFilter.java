@@ -25,6 +25,9 @@ public class FulFillAllConditionFilter extends AbstractFilter {
         }
         return false;*/
         // follow up
+        /*
+        下面这段code意思是说，得到file的所有field的，然后比较这些field和p里面的相应的field是否相等
+         */
         Field[] fields = file.getClass().getDeclaredFields();
         for (Field field : fields) {
             try {

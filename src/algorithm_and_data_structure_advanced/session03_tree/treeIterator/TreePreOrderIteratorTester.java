@@ -28,25 +28,56 @@ import java.util.Stack;
 //         this.right = right;
 //     }
 // }
+/*
+两种方法都在LeetCode 144. Binary Tree Preorder Traversal做过测试，应该是对的
+ */
 public class TreePreOrderIteratorTester {
 	
 	// Java: binary-search-tree-iterator
 	public static void main(String[] args) {
 		
 		String str =  "1,2,3,4,5,null, 6,7,8,9";
-		TreeNode root = TreeGenerator.deserialize(str);
-		TreePreOrderIterator2 bstIterator = new TreePreOrderIterator2(root);
-		String treeStr = TreeGenerator.serialize(root);
-		System.out.println("the Tree");
-		TreeDrawer.draw(root);
-		List<Integer> res = new LinkedList<>();
-		while (bstIterator.hasNext()) {
-			res.add(bstIterator.next());
-		}
-		System.out.println("traverse of the tree by" + TreePreOrderIteratorTester.class.getSimpleName());
-		System.out.println(res);
+		testTreePreOrderIterator(str, true, true);
 	}
 	
+	private static void testTreePreOrderIterator(String str, boolean testIterator1,
+			boolean testIterator2) {
+		TreeNode root = TreeGenerator.deserialize(str);
+		System.out.println("the Tree");
+		TreeDrawer.draw(root);
+		if (testIterator1) {
+			TreePreOrderIterator1 bstIterator = new TreePreOrderIterator1(root);
+			List<Integer> res = new LinkedList<>();
+			while (bstIterator.hasNext()) {
+				res.add(bstIterator.next());
+			}
+			System.out.println();
+			System.out.println("traverse of the tree by" + bstIterator.getClass().getSimpleName());
+			System.out.println(res);
+		}
+		if (testIterator2) {
+			TreePreOrderIterator2 bstIterator = new TreePreOrderIterator2(root);
+			List<Integer> res = new LinkedList<>();
+			while (bstIterator.hasNext()) {
+				res.add(bstIterator.next());
+			}
+			System.out.println();
+			System.out.println("traverse of the tree by" + bstIterator.getClass().getSimpleName());
+			System.out.println(res);
+		}
+		
+	}
+	
+	
+	/*
+	stack里面的每个值，都用于表示这个值的subtree，处理完这个点，就把right & left child加到stack里面
+	1.初始化的时候，把root放到stack里面
+	2.然后每次next的时候，把当前值cur pop出来，
+		按顺序分别把这个点的right child, left child, push 到stack里面，
+		然后return cur;
+	时间复杂度T(n) = O(lgn), average O(1)
+	空间复杂度S(n) = O(2 * h) = O(h)  h∈[log(n), n]
+	 */
 	static class TreePreOrderIterator1 {
 
 		Stack<TreeNode> stack;
@@ -82,6 +113,17 @@ public class TreePreOrderIteratorTester {
 
 	}
 	
+	/*
+	stack是一条从上到下的一条路径，路径里面的每个点表示这个点的right subtree
+	当一个点的左子树处理完的时候，加入这个点的right child
+	1.初始化的时候，把root放到stack里面
+	2. 每次call next的时候，把当前的值stack.peek() cur出来
+		如果有左子树，stack.push(left child)
+		如果只有右子树，stack.pop(),然后stack.push(right child)
+		如果左右子树都没有，路径上把遍历过的没有右子树的ancestor都pop出来，然后加如最后一个被pop出来的right child
+	时间复杂度T(n) = O(lgn), average O(1)
+	空间复杂度S(n) = O(h)  h∈[log(n), n]
+	 */
 	static class TreePreOrderIterator2 {
 		
 		Stack<TreeNode> stack;
@@ -105,12 +147,13 @@ public class TreePreOrderIteratorTester {
 			TreeNode top = stack.peek();
 			TreeNode left = top.left;
 			TreeNode right = top.right;
-			if (left != null) {
+			if (left != null) { // 有left child,可能也有right child
 				stack.push(left);
-			} else if (right != null) {
+			} else if (right != null) { // 只有right child
 				stack.pop();
 				stack.push(right);
-			} else {
+			} else { // 左右子树都没有
+				// 把路径里面遍历过的没有right child的ancestor给pop()出来
 				TreeNode parent = stack.pop();
 				while (!stack.isEmpty() && parent.right == null) {
 					parent = stack.pop();

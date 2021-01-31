@@ -207,5 +207,3 @@ public class Q22_1FindKthSmallestElementsInKSortedArray {
 		}
 	}
 }
-
-

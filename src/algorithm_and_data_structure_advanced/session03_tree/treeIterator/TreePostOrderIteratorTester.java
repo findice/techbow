@@ -37,7 +37,6 @@ public class TreePostOrderIteratorTester {
 		TreeNode root = TreeGenerator.deserialize(str);
 		TreePostOrderIterator treePostOrderIterator = new TreePostOrderIterator(root);
 		// TO TEST
-		String treeStr = TreeGenerator.serialize(root);
 		List<Integer> res = new LinkedList<>();
 		while (treePostOrderIterator.hasNext()) {
 			res.add(treePostOrderIterator.next());
@@ -71,9 +70,6 @@ public class TreePostOrderIteratorTester {
 			return !stack.isEmpty();
 		}
 		
-		/**
-		 * @return the next smallest number
-		 */
 		public int next() {
 			TreeNode top = stack.pop();
 			if (!stack.isEmpty()) {
