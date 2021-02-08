@@ -1,4 +1,4 @@
-package algorithm_and_data_structure_basic.session05_binary_search_tree_and_divide_donquer;
+package algorithm_and_data_structure_basic.session05_binary_search_tree_and_divide_conquer;
 
 import dependentClass.TreeDrawer;
 import dependentClass.TreeGenerator;
