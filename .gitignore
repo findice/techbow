@@ -8,3 +8,4 @@
 out
 .gradle
 gen
+*.ini
