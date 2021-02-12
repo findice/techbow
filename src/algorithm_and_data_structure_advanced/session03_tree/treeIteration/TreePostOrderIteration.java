@@ -198,14 +198,12 @@ public class TreePostOrderIteration {
 				} else { // 右边为空,弹栈 + 更新res
 					res.add(stack.pop().val);
 				}
-			} else { // prev == cur.right // 往上走,且prev是cur的右子树,说明下面走完了,更新res
+			} else { // prev == cur.right 往上走,且prev是cur的右子树,说明下面走完了,更新res
 				res.add(stack.pop().val);
 			}
 			prev = cur;
 		}
 		return res;
 	}
-	
-	
 	
 }
