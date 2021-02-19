@@ -114,7 +114,7 @@ public class TreePreOrderIteratorTester {
 	}
 	
 	/*
-	stack是一条从上到下的一条路径，路径里面的每个点表示这个点还没开始traverse它的right subtree
+	stack是一条从上到下的一条路径，路径里面的每个点，表示这个点还没开始traverse它的right subtree
 	当一个点的左子树处理完的时候，加入这个点的right child
 	1.初始化的时候，把root放到stack里面
 	2. 每次call next的时候，把当前的值stack.peek() cur出来

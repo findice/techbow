@@ -98,8 +98,11 @@ public class TreePreOrderIterator {
 			return !stack.isEmpty();
 		}
 		
-		/*S(n) = O(n)
-		入栈的时候，加到List里面*/
+		/*
+		S(n) = O(n)
+		入栈的时候，加到List里面
+		
+		*/
 		public int next() {
 			// 先一直往下走，能往左边走往左边走，否则往右边走
 			TreeNode top = stack.peek();

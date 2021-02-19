@@ -39,19 +39,19 @@ public class TreePostOrderIteration {
 		return res;
 	}
 	
-	// method 1_2: leetcode的答案 S(n) = O(h) res用LinkedList，入栈的时候addFirst()
+	// method 1_2: leetcode的答案 S(n) = O(2h) res用LinkedList，入栈的时候addFirst()
 	public List<Integer> postorderTraversal1_2(TreeNode root) {
-		LinkedList<Integer> output = new LinkedList<>();
+		LinkedList<Integer> res = new LinkedList<>();
 		Stack<TreeNode> stack = new Stack<>();
 		
 		if (root == null) {
-			return output;
+			return res;
 		}
 		
 		stack.push(root);
 		while (!stack.isEmpty()) {
 			root = stack.pop();
-			output.addFirst(root.val);
+			res.addFirst(root.val);
 			if (root.left != null) {
 				stack.push(root.left);
 			}
@@ -60,7 +60,7 @@ public class TreePostOrderIteration {
 			}
 		}
 		
-		return output;
+		return res;
 	}
 	
 	// method 1_3: 算法加强课某同学的方法，S(n) = O(2h)往下走的时候，先压right，再压left
@@ -133,7 +133,7 @@ public class TreePostOrderIteration {
 		// general case
 		Stack<TreeNode> stack = new Stack<>();
 		TreeNode cur = root;
-		// pre processing
+		// pre-processing
 		while (cur != null) { // 一直往下走,优先走左边
 			stack.push(cur);
 			if (cur.left != null) {
