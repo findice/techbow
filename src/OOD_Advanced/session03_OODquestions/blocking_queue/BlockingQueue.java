@@ -7,7 +7,7 @@ package OOD_Advanced.session03_OODquestions.blocking_queue;
 //Description:
 //Author: Zeshi(Jesse) Yang
 //Date: 2021-02-19 星期五 0:42
-public class BlockingQueue<T> extends Queue<T> {
+class BlockingQueue<T> extends Queue<T> {
    private int count = 0;
    private final int capacity;
   

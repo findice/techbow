@@ -1,6 +1,6 @@
 package OOD_Advanced.session03_OODquestions.blocking_queue;
 
-public abstract class Queue<T> {
+abstract class Queue<T> {
     
     public boolean offer(T t) {
         return false;

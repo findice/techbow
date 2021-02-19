@@ -1,8 +1,16 @@
 package OOD_Advanced.session01_basic_concept.amazon_locker;
 
 import java.util.List;
-
-class AmazonLockerStop {
+/**
+ * An Amazon pickup location has a series of lockers for packages to be dropped off and picked up.
+ * Packages can come in many different sizes. We have lockers of varying sizes as well.
+ * Model the lockers, packages and pickup location and implement an algorithm for efficiently finding
+ * the best possible empty locker for a given package and then to retrieve it when it is collected.
+ *
+ * reference Picture
+ * https://images-na.ssl-images-amazon.com/images/G/01//prime/primeinsider2/lockers/amzn_lockers_hero_1200x1200.png
+ */
+public class AmazonLockerStop {
     
     private String id;
     private String address;
