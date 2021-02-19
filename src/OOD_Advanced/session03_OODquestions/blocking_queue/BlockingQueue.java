@@ -49,17 +49,4 @@ public class BlockingQueue<T> extends Queue<T> {
         return result;
     }
     
-    synchronized T pop() {
-       while (count == 0) {
-           try {
-               wait();
-           } catch (InterruptedException e) {
-           
-           }
-       }
-       T result = super.poll();
-       count--;
-       notifyAll();
-       return result;
-   }
 }
