@@ -114,7 +114,8 @@ public class TreePreOrderIteratorTester {
 	}
 	
 	/*
-	stack是一条从上到下的一条路径，路径里面的每个点，表示这个点还没开始traverse它的right subtree
+	stack是一条从上到下的一条路径（起点不一定是root)，
+	路径里面的每个点表示这个点还没开始traverse它的right subtree(left subtree还没遍历完）
 	当一个点的左子树处理完的时候，加入这个点的right child
 	1.初始化的时候，把root放到stack里面
 	2. 每次call next的时候，把当前的值stack.peek() cur出来
@@ -152,7 +153,7 @@ public class TreePreOrderIteratorTester {
 			} else if (right != null) { // 只有right child
 				stack.pop();
 				stack.push(right);
-			} else { // 左右子树都没有
+			} else { // 左右子树都没有,都是空
 				// 把路径里面遍历过的没有right child的ancestor给pop()出来
 				TreeNode parent = stack.pop();
 				while (!stack.isEmpty() && parent.right == null) {

@@ -27,30 +27,30 @@ import java.util.Stack;
 //         this.right = right;
 //     }
 // }
-public class TreeInOrderIterator {
+public class TreeInOrderIteratorTester {
 	
 	public static void main(String[] args) {
 		
-		String str = "1,2,3,4,5,6,7,8,9";
+		String str = "1, 2, 3, 6 , 8";
 		TreeNode root = TreeGenerator.deserialize(str);
-		TreePostOrderIterator.BSTIterator bstIterator = new TreePostOrderIterator.BSTIterator(root);
+		TreeInOrderIterator treeInOrderIterator = new TreeInOrderIterator(root);
 		// TO TEST
-		String treeStr = TreeGenerator.serialize(root);
+		// String treeStr = TreeGenerator.serialize(root);
 		List<Integer> res = new LinkedList<>();
-		while (bstIterator.hasNext()) {
-			res.add(bstIterator.next());
+		while (treeInOrderIterator.hasNext()) {
+			res.add(treeInOrderIterator.next());
 		}
 		System.out.println("the Tree");
 		TreeDrawer.draw(root);
-		System.out.println("traverse of the tree by" + TreeInOrderIterator.class.getSimpleName());
+		System.out.println("traverse of the tree by" + TreeInOrderIteratorTester.class.getSimpleName());
 		System.out.println(res);
 	}
 	
-	public static class BSTIterator {
+	public static class TreeInOrderIterator {
 		
 		Stack<TreeNode> stack;
 		
-		public BSTIterator(TreeNode root) {
+		public TreeInOrderIterator(TreeNode root) {
 			stack = new Stack<>();
 			TreeNode cur = root;
 			while (cur != null) {
@@ -60,7 +60,8 @@ public class TreeInOrderIterator {
 		}
 		
 		/**
-		 * @return the next smallest number
+		 * also means left++
+		 * @return the next inorder traversal number
 		 */
 		public int next() {
 			TreeNode top = stack.pop();

@@ -28,19 +28,18 @@ import java.util.Stack;
 //         this.right = right;
 //     }
 // }
-public class TreePostOrderIterator {
+public class TreePostOrderIteratorTester {
 	
 	// Java: binary-search-tree-iterator
 	public static void main(String[] args) {
 		
 		String str = "1,2,3,4,5,null, 6,7,8,9";
 		TreeNode root = TreeGenerator.deserialize(str);
-		BSTIterator bstIterator = new BSTIterator(root);
+		TreePostOrderIterator treePostOrderIterator = new TreePostOrderIterator(root);
 		// TO TEST
-		String treeStr = TreeGenerator.serialize(root);
 		List<Integer> res = new LinkedList<>();
-		while (bstIterator.hasNext()) {
-			res.add(bstIterator.next());
+		while (treePostOrderIterator.hasNext()) {
+			res.add(treePostOrderIterator.next());
 		}
 		System.out.println("the Tree");
 		TreeDrawer.draw(root);
@@ -48,13 +47,11 @@ public class TreePostOrderIterator {
 		System.out.println(res);
 	}
 
-//  Definition for a binary tree node.
-	
-	static class BSTIterator {
+	static class TreePostOrderIterator {
 		
 		Stack<TreeNode> stack;
 		
-		public BSTIterator(TreeNode root) {
+		public TreePostOrderIterator(TreeNode root) {
 			stack = new Stack<>();
 			TreeNode cur = root;
 			while (cur != null) {
@@ -71,9 +68,6 @@ public class TreePostOrderIterator {
 			return !stack.isEmpty();
 		}
 		
-		/**
-		 * @return the next smallest number
-		 */
 		public int next() {
 			TreeNode top = stack.pop();
 			if (!stack.isEmpty()) {
