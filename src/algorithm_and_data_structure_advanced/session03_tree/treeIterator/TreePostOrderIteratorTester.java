@@ -47,8 +47,6 @@ public class TreePostOrderIteratorTester {
 		System.out.println(res);
 	}
 
-//  Definition for a binary tree node.
-	
 	static class TreePostOrderIterator {
 		
 		Stack<TreeNode> stack;

@@ -13,6 +13,9 @@ import java.util.Stack;
 //Description:
 //Author: Zeshi(Jesse) Yang
 //Date: 2020-11-16 星期一 21:09
+/*
+面试的时候，用method 2_1
+ */
 public class TreePostOrderIteration {
 	
 	// post order traverse
@@ -117,12 +120,12 @@ public class TreePostOrderIteration {
 		return res;
 	}
 	
+	// method 2_1: 自己的方法 S(n) = O(h)
 	/*
 	Stack 先一直往左走走到底，不能走的时候pop，并加入result
         如果自己是父节点的left，就stack push父节点的right
         如果本身就是父节点的right，什么都不做
 	 */
-	// method 2_1: 自己的方法 S(n) = O(h)
 	public List<Integer> postorderTraversal2_1(TreeNode root) {
 		List<Integer> res = new ArrayList<>();
 		// corner case
@@ -142,6 +145,7 @@ public class TreePostOrderIteration {
 				cur = cur.right;
 			}
 		}
+		
 		while (!stack.isEmpty()) {
 			cur = stack.pop();
 			res.add(cur.val);
@@ -160,6 +164,7 @@ public class TreePostOrderIteration {
 		return res;
 	}
 	
+	// method 2_2: 算法哥的方法， S(n) = O(h)
 	/*
     如果是往下走, prev来确定这个是parent的左子树还是右子树
         如果是左子树,就继续往下走,优先走左边
@@ -171,7 +176,6 @@ public class TreePostOrderIteration {
         如果是右子树,
             说明右子树走完了,弹栈+ 更新res
     */
-	// method 2_2: 算法哥的方法， S(n) = O(h)
 	public List<Integer> postorderTraversal2_2(TreeNode root) {
 		List<Integer> res = new ArrayList<>();
 		// corner case

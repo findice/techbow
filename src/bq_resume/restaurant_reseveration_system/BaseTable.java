@@ -1,8 +1,8 @@
-package bq_resume.RestaurantReseverationSystem;
+package bq_resume.restaurant_reseveration_system;
 
-import static bq_resume.RestaurantReseverationSystem.TableState.Empty;
-import static bq_resume.RestaurantReseverationSystem.TableState.Occupy;
-import static bq_resume.RestaurantReseverationSystem.TableState.Reserved;
+import static bq_resume.restaurant_reseveration_system.TableState.Empty;
+import static bq_resume.restaurant_reseveration_system.TableState.Occupy;
+import static bq_resume.restaurant_reseveration_system.TableState.Reserved;
 
 import com.sun.istack.internal.NotNull;
 import java.util.ArrayList;

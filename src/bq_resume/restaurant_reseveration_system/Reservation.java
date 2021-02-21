@@ -1,4 +1,4 @@
-package bq_resume.RestaurantReseverationSystem;
+package bq_resume.restaurant_reseveration_system;
 
 import com.sun.istack.internal.NotNull;
 
