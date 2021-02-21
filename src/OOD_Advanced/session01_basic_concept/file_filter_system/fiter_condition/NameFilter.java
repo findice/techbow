@@ -11,6 +11,6 @@ public final class NameFilter extends FilterCondition {
 	
 	@Override
 	public boolean filter(File file) {
-		return file.getName().equals(this.filterParam.getName());
+		return this.filterParam.getName().equals(file.getName());
 	}
 }
