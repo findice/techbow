@@ -13,9 +13,8 @@ import java.util.Stack;
 //Description:
 //Author: Zeshi(Jesse) Yang
 //Date: 2020-11-16 星期一 21:09
-/*
-面试的时候，用method 2_1
- */
+
+/**面试的时候，用method 2_1*/
 public class TreePostOrderIteration {
 	
 	// post order traverse
