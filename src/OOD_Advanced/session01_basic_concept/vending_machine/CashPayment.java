@@ -4,6 +4,6 @@ public final class CashPayment implements Payment {
 	
 	@Override
 	public boolean pay(Product product, double value) {
-		return false;
+		return value >= product.getPrice();
 	}
 }
