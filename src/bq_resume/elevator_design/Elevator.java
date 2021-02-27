@@ -75,14 +75,6 @@ public class Elevator {
     }
     
     /**
-     * Try {
-     * <p>
-     * elevator.handleExternalRequest(request);
-     * <p>
-     * } catch (InvalidRequestException e){
-     * <p>
-     * //Do something specific to this exception; }
-     *
      * @param externalRequest
      * @throws InvalidRequestException
      */
