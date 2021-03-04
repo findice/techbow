@@ -55,7 +55,7 @@ public class Elevator {
     
     public boolean handleInternalRequest(final Request request) {
         //Check Edge case
-        if (!checkVaildRequest(request)) {
+        if (!checkValidRequest(request)) {
             return false;
         }
         
@@ -80,7 +80,7 @@ public class Elevator {
      */
     public void handleExternalRequest(final ExternalRequest externalRequest) throws
             InvalidRequestException {
-        if (!checkVaildRequest(externalRequest)) {
+        if (!checkValidRequest(externalRequest)) {
             return;
         }
         
@@ -102,7 +102,7 @@ public class Elevator {
         }
     }
     
-    private boolean checkVaildRequest(Request request) {
+    private boolean checkValidRequest(Request request) {
         if (request == null) {
             return false;
         }

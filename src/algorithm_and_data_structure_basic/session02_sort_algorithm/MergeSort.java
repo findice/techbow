@@ -52,7 +52,6 @@ public final class MergeSort {
             }
         }
         // left will reach to mid + 1 or right will reach to end + 1, only need to sort
-        
         while (left <= mid) {
             helper[index++] = nums[left++];
         }
