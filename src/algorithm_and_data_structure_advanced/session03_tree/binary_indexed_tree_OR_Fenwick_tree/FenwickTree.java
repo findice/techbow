@@ -9,26 +9,26 @@ package algorithm_and_data_structure_advanced.session03_tree.binary_indexed_tree
 // fenwick tree又叫binary indexed tree，因为这个数据结构是前者发明的
 public class FenwickTree {
     
-    private final int[] bit;
+    private final int[] preSum;
     
     public FenwickTree(int n) {
-        bit = new int[n + 1];
+        preSum = new int[n + 1];
     }
     
     /** return sum from array[1] to array[index] (inclusively), T(n) = O(lg(n))*/
     public int query(int index) {
         int res = 0;
         for (int i = index; i > 0; i -= lowbit(i)) { // 边界是 i > 0
-            res += bit[i];
+            res += preSum[i];
         }
         return res;
     }
     
     /** add delta to array[index], T(n) = O(lg(n))*/
     public void update(int index, int delta) {
-        int len = bit.length;
+        int len = preSum.length;
         for (int i = index; i < len; i += lowbit(i)) { // 与查询相反, 边界是 i < len
-            bit[i] += delta;
+            preSum[i] += delta;
         }
     }
     
