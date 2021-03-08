@@ -16,6 +16,7 @@ public class TreePostOrderRecursion {
 		}
 		postOrder(root.left);
 		postOrder(root.right);
+		// do sth for root
 		System.out.println(root.val);
 	}
 	

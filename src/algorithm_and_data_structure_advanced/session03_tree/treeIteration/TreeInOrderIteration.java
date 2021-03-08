@@ -14,6 +14,9 @@ import java.util.Stack;
 public class TreeInOrderIteration {
 	
 	// in order traverse
+	/*
+	出栈的时候，放到Result里面
+	 */
 	public List<Integer> inorderTraversal(TreeNode root) {
 		List<Integer> res = new ArrayList<>();
 		// corner case

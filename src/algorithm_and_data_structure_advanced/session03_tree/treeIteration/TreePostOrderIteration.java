@@ -121,6 +121,7 @@ public class TreePostOrderIteration {
 	
 	// method 2_1: 自己的方法 S(n) = O(h)
 	/*
+	出栈的时候，放到result里面
 	Stack 先一直往左走走到底，不能走的时候pop，并加入result
         如果自己是父节点的left，就stack push父节点的right
         如果本身就是父节点的right，什么都不做

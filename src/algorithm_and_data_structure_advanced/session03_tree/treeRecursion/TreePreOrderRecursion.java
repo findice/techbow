@@ -14,7 +14,7 @@ public class TreePreOrderRecursion {
         if (root == null) {
             return;
         }
-        // do sth
+        // do sth for root
         System.out.println(root.val);
         preOrder(root.left);
         preOrder(root.right);

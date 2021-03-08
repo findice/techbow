@@ -10,7 +10,6 @@ import dependentClass.TreeNode;
 //Date: 2020-11-16 星期一 21:06
 public class TreeInOrderRecursion {
 	
-	TreeNode prev;
 	
 	private void inOrder(TreeNode root, TreeNode prev) {
 		if (root == null) {
