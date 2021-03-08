@@ -17,11 +17,8 @@ public class TreeInOrderRecursion {
 			return;
 		}
 		inOrder(root.left, prev);
-		// System.out.println(root.value);
 		// do sth for root
-		if (prev.val < root.val) {
-			prev = root;
-		}
+		System.out.println(root.val);
 		inOrder(root.right, prev);
 	}
 	
