@@ -1,4 +1,4 @@
-package silentwing算法冲刺.session06_stackAndHeap;
+package silentwing算法冲刺.session06_stack_and_Heap;
 
 //Project: techbow
 //Package: silentwing算法冲刺.session06_stackAndHeap

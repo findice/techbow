@@ -1,4 +1,4 @@
-package silentwing算法冲刺.session07_TrieAndLinkedList;
+package silentwing算法冲刺.session07_Trie_and_LinkedList;
 
 import java.util.ArrayList;
 import java.util.List;

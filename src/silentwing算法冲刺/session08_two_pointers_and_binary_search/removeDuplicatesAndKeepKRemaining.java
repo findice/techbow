@@ -1,4 +1,4 @@
-package silentwing算法冲刺.session08_TwoPointersAndBinarySearch;
+package silentwing算法冲刺.session08_two_pointers_and_binary_search;
 
 //Project: techbow
 //Package: silentwing算法冲刺.session08_TwoPointersAndBinarySearch

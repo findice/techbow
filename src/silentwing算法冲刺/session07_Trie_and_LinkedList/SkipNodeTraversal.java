@@ -1,4 +1,4 @@
-package silentwing算法冲刺.session07_TrieAndLinkedList;
+package silentwing算法冲刺.session07_Trie_and_LinkedList;
 
 //Project: techbow
 //Package: silentwing算法冲刺.session07_TrieAndLinkedList
