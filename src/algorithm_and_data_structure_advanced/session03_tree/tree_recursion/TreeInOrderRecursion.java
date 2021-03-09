@@ -1,23 +1,24 @@
-package algorithm_and_data_structure_advanced.session03_tree.treeRecursion;
+package algorithm_and_data_structure_advanced.session03_tree.tree_recursion;
 
 import dependentClass.TreeNode;
 
 //Project: techbow
 //Package: algorithm_and_data_structure_advanced.session03Tree.recursion
-//ClassName: PostOrder
+//ClassName: InOrder
 //Description:
 //Author: Zeshi(Jesse) Yang
 //Date: 2020-11-16 星期一 21:06
-public class TreePostOrderRecursion {
+public class TreeInOrderRecursion {
 	
-	private void postOrder(TreeNode root) {
+	
+	private void inOrder(TreeNode root, TreeNode prev) {
 		if (root == null) {
 			return;
 		}
-		postOrder(root.left);
-		postOrder(root.right);
+		inOrder(root.left, prev);
 		// do sth for root
 		System.out.println(root.val);
+		inOrder(root.right, prev);
 	}
 	
 }

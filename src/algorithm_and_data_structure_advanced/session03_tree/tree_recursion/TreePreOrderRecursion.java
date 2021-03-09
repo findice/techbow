@@ -1,4 +1,4 @@
-package algorithm_and_data_structure_advanced.session03_tree.treeRecursion;
+package algorithm_and_data_structure_advanced.session03_tree.tree_recursion;
 
 import dependentClass.TreeNode;
 

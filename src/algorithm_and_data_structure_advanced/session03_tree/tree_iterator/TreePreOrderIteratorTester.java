@@ -1,4 +1,4 @@
-package algorithm_and_data_structure_advanced.session03_tree.treeIterator;
+package algorithm_and_data_structure_advanced.session03_tree.tree_iterator;
 
 import dependentClass.TreeDrawer;
 import dependentClass.TreeGenerator;

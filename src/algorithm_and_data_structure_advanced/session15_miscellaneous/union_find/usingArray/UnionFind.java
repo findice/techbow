@@ -1,4 +1,4 @@
-package algorithm_and_data_structure_advanced.session15_miscellaneous.unionFind.usingArray;
+package algorithm_and_data_structure_advanced.session15_miscellaneous.union_find.usingArray;
 
 import java.util.Arrays;
 

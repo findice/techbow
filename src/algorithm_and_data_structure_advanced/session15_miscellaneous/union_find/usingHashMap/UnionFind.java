@@ -1,4 +1,4 @@
-package algorithm_and_data_structure_advanced.session15_miscellaneous.unionFind.usingHashMap;
+package algorithm_and_data_structure_advanced.session15_miscellaneous.union_find.usingHashMap;
 
 import java.util.HashMap;
 

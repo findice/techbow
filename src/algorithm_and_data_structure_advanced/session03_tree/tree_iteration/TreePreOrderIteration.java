@@ -1,4 +1,4 @@
-package algorithm_and_data_structure_advanced.session03_tree.treeIteration;
+package algorithm_and_data_structure_advanced.session03_tree.tree_iteration;
 
 import dependentClass.TreeNode;
 import java.util.ArrayList;
