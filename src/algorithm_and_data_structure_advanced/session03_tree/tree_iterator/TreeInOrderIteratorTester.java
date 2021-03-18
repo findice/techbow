@@ -45,7 +45,13 @@ public class TreeInOrderIteratorTester {
 		System.out.println("traverse of the tree by" + TreeInOrderIteratorTester.class.getSimpleName());
 		System.out.println(res);
 	}
-	
+	/*
+	stack里面的每一个值表示这个值左子树还没遍历完
+	初始化的时候，从root开始沿着左边一直push到stack里面
+	hashNext() 看stack是不是空的
+	next()的时候，把stack的栈顶返回pop之后return出来，
+		还要把这个元素沿着左边一直走到底的child push到stack里面
+	 */
 	public static class TreeInOrderIterator {
 		
 		Stack<TreeNode> stack;
@@ -57,6 +63,11 @@ public class TreeInOrderIteratorTester {
 				stack.push(cur);
 				cur = cur.left;
 			}
+		}
+		
+		/**@return whether we have a next smallest number*/
+		public boolean hasNext() {
+			return !stack.isEmpty();
 		}
 		
 		/**
@@ -71,13 +82,6 @@ public class TreeInOrderIteratorTester {
 				cur = cur.left;
 			}
 			return top.val;
-		}
-		
-		/**
-		 * @return whether we have a next smallest number
-		 */
-		public boolean hasNext() {
-			return !stack.isEmpty();
 		}
 		
 	}

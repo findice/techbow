@@ -3,6 +3,7 @@ package algorithm_and_data_structure_advanced.session07_graph.topological_sort;/
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 //Package: algorithm_and_data_structure_advanced.session07Graph.topological_sort
 //ClassName: TopologicalSort
@@ -11,15 +12,15 @@ import java.util.List;
 //Date: 2020-11-17 星期二 16:09
 public class TopologicalSort {
     
-    public List<Vertex> containsCycle(HashMap<Vertex, List<Vertex>> graph) {
+    public List<Node> containsCycle(HashMap<Node, List<Node>> graph) {
         // corner case
         if (graph == null) {
             return null;
         }
         
         // general case
-        LinkedList<Vertex> res = new LinkedList<>();
-        for (Vertex start : graph.keySet()) {
+        LinkedList<Node> res = new LinkedList<>();
+        for (Node start : graph.keySet()) {
             if (dfs(start, graph, res)) {
                 throw new RuntimeException("graph has cycle");
             }
@@ -27,10 +28,8 @@ public class TopologicalSort {
         return res;
     }
     
-    /**
-     * return true if finding a cycle from Vertex cur
-     */
-    private boolean dfs(Vertex cur, HashMap<Vertex, List<Vertex>> graph, LinkedList<Vertex> res) {
+    /** return true if finding a cycle from Vertex cur */
+    private boolean dfs(Node cur, Map<Node, List<Node>> graph, LinkedList<Node> res) {
         if (cur.status == Status.VISITED) { // pruning
             return false;
         }
@@ -41,7 +40,7 @@ public class TopologicalSort {
         
         cur.status = Status.VISITING;
         // res.add(cur); // part 1
-        for (Vertex next : graph.get(cur)) {
+        for (Node next : graph.get(cur)) {
             if (dfs(next, graph, res)) {
                 return true;
             }

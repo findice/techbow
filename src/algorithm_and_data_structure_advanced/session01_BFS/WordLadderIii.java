@@ -6,7 +6,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 
 //Project: techbow
 //Package: algorithm_and_data_structure_advanced.session01BFS
@@ -16,39 +18,41 @@ import java.util.Queue;
 public class WordLadderIii {
 	
 	public static void main(String[] args) {
-		Solution sol = new WordLadderIii().new Solution();
+		Solution1 sol = new WordLadderIii().new Solution1();
 		// TO TEST
 		
-		String beginWord = "maria";
-		String endWord = "pearl";
-		String[] words = {"flail","halon","lexus","joint","pears","slabs","lorie","lapse","wroth","yalow","swear","cavil","piety","yogis","dhaka","laxer","tatum","provo","truss","tends","deana","dried","hutch","basho","flyby","miler","fries","floes","lingo","wider","scary","marks","perry","igloo","melts","lanny","satan","foamy","perks","denim","plugs","cloak","cyril","women","issue","rocky","marry","trash","merry","topic","hicks","dicky","prado","casio","lapel","diane","serer","paige","parry","elope","balds","dated","copra","earth","marty","slake","balms","daryl","loves","civet","sweat","daley","touch","maria","dacca","muggy","chore","felix","ogled","acids","terse","cults","darla","snubs","boats","recta","cohan","purse","joist","grosz","sheri","steam","manic","luisa","gluts","spits","boxer","abner","cooke","scowl","kenya","hasps","roger","edwin","black","terns","folks","demur","dingo","party","brian","numbs","forgo","gunny","waled","bucks","titan","ruffs","pizza","ravel","poole","suits","stoic","segre","white","lemur","belts","scums","parks","gusts","ozark","umped","heard","lorna","emile","orbit","onset","cruet","amiss","fumed","gelds","italy","rakes","loxed","kilts","mania","tombs","gaped","merge","molar","smith","tangs","misty","wefts","yawns","smile","scuff","width","paris","coded","sodom","shits","benny","pudgy","mayer","peary","curve","tulsa","ramos","thick","dogie","gourd","strop","ahmad","clove","tract","calyx","maris","wants","lipid","pearl","maybe","banjo","south","blend","diana","lanai","waged","shari","magic","duchy","decca","wried","maine","nutty","turns","satyr","holds","finks","twits","peaks","teems","peace","melon","czars","robby","tabby","shove","minty","marta","dregs","lacks","casts","aruba","stall","nurse","jewry","knuth"};
+		String beginWord = "hit";
+		String endWord = "cog";
+		String[] words = {"hot","dot","dog","lot","log","cog"};
 		List<String> wordList = new ArrayList<>(Arrays.asList(words));
-		List<String> result = sol.findOneLadder(beginWord, endWord, wordList);
+		List<String> result = sol.ladderLength(beginWord, endWord, wordList);
 		System.out.println(Arrays.deepToString(result.toArray()));
 	}
 	
-// 如果HashSet的contains和add时间复杂度是O(1),
-// 则T(n)= O(V + E) = O(min(2^k, k *n), S(n) = O(min(2^k, k * n)
-// 如果HashSet的contains和add时间复杂度是O(k),
-// 则T(n)= O(V + E) = O(min(k * 2^k, k^2 *n), S(n) = O(min(k * 2^k, k^2 * n)
-// n: 字典里单词个数，k:每个单词的长度
-class Solution {
+// Solution 1: one directional BFS, 已经用leetCode 127测试过了
+/*
+ 如果HashSet的contains和add时间复杂度是O(1),
+    则T(n)= O(V + E) = O(min(2^k, k *n), S(n) = O(min(2^k, k * n)
+ 如果HashSet的contains和add时间复杂度是O(k),
+    则T(n)= O(V + E) = O(min(k * 2^k, k^2 *n), S(n) = O(min(k * 2^k, k^2 * n)
+ n: 字典里单词个数，k:每个单词的长度
+*/
+class Solution1 {
 	
-	public List<String> findOneLadder(String beginWord, String endWord, List<String> wordList)
-			throws RuntimeException {
+	public List<String> ladderLength(String beginWord, String endWord, List<String> wordList) {
 		// corner case
 		if (beginWord == null || endWord == null || wordList == null) {
-			throw new IllegalArgumentException();
+			return new ArrayList<>();
 		}
 		
-		HashSet<String> dict = new HashSet<>(wordList);
-		HashMap<String, String> graph = new HashMap<>();
+		Set<String> dict = new HashSet<>(wordList);
+		Map<String, String> graph = new HashMap<>();
 		
 		Queue<String> queue = new LinkedList<>();
 		queue.offer(beginWord);
 		while (!queue.isEmpty()) {
 			String cur = queue.poll();
-			List<String> neighbors = convert(cur, dict);
+			List<String> neighbors = getNeighbors(cur, dict);
 			for (String neighbor : neighbors) {
 				graph.put(neighbor, cur); // 一定要加在终点if判定之前，否则无法还原路径！！！
 				if (neighbor.equals(endWord)) {
@@ -58,10 +62,10 @@ class Solution {
 				dict.remove(neighbor);
 			}
 		}
-		throw new RuntimeException();
+		return new ArrayList<>();
 	}
 	
-	private List<String> getPath(String cur, String target, HashMap<String, String> graph) {
+	private List<String> getPath(String cur, String target, Map<String, String> graph) {
 		LinkedList<String> path = new LinkedList<>();
 		while (true) {
 			path.addFirst(cur);
@@ -72,7 +76,7 @@ class Solution {
 		}
 	}
 	
-	private List<String> convert(String cur, HashSet<String> dict) {
+	private List<String> getNeighbors(String cur, Set<String> dict) {
 		List<String> nexts = new ArrayList<>();
 		char[] chars = cur.toCharArray();
 		for (int i = 0; i < chars.length; i++) {
@@ -87,6 +91,113 @@ class Solution {
 			chars[i] = temp;
 		}
 		return nexts;
+	}
+	
+}
+
+// Solution 2: bidirectional BFS, 已经用leetCode 127测试过了
+/*
+ 如果HashSet的contains和add时间复杂度是O(1),
+    则T(n)= O(V + E) = O(min(2^k, k *n), S(n) = O(min(2^k, k * n)
+ 如果HashSet的contains和add时间复杂度是O(k),
+    则T(n)= O(V + E) = O(min(k * 2^k, k^2 *n), S(n) = O(min(k * 2^k, k^2 * n)
+ n: 字典里单词个数，k:每个单词的长度
+*/
+class Solution2 {
+	
+	public List<String> ladderLength(String beginWord, String endWord, List<String> wordList) {
+		Set<String> wordSet = new HashSet<>(wordList);
+		// corner case
+		if (wordList == null || !wordSet.contains(endWord)) {
+			return new ArrayList<>();
+		}
+		
+		Set<String> beginSet = new HashSet<>();
+		Set<String> endSet = new HashSet<>();
+		endSet.add(endWord);
+		beginSet.add(beginWord);
+		Map<String, String> beginGraph = new HashMap<>();
+		Map<String, String> endGraph = new HashMap<>();
+		
+		String metPoint = getMetPoint(beginSet, beginGraph, endSet, endGraph, wordSet);
+		if (metPoint == null) {
+			return new ArrayList<>();
+		}
+		return dfsBuildPath(beginWord, metPoint, endWord, beginGraph, endGraph);
+	}
+	
+	// BFS to get met level, 永远是从set1往set2走，make sure set1 <= set2
+	private String getMetPoint(Set<String> set1, Map<String, String> graph1,
+			Set<String> set2, Map<String, String> graph2, Set<String> wordSet) {
+		// elements in this level will be deleted from wordSet after traversing this level
+		while (!set1.isEmpty() && !set2.isEmpty()) {
+			// make set1 <= set2, may exchange set1, set2; graph1, graph2
+			if (set1.size() > set2.size()) {
+				Set<String> tempSet = set1;
+				set1 = set2;
+				set2 = tempSet;
+				Map<String, String> tempGraph = graph1;
+				graph1 = graph2;
+				graph2 = tempGraph;
+			}
+			Set<String> nextLevel = new HashSet<>();
+			for (String cur : set1) {
+				List<String> neighbors = getNeighbors(cur, wordSet, set1);
+				for (String str : neighbors) {
+					if (set2.contains(str)) {
+						graph1.put(str, cur);
+						return str;
+					}
+					nextLevel.add(str);
+					graph1.put(str, cur);
+				}
+			}
+			wordSet.removeAll(set1);
+			set1 = nextLevel;
+		}
+		return null;
+	}
+	
+	/**
+	 * return the list of neighbors of the cur which are in the dict and 1 distance
+	 */
+	private List<String> getNeighbors(String cur, Set<String> dict, Set<String> set1) {
+		List<String> res = new ArrayList<>();
+		char[] chars = cur.toCharArray();
+		for (int i = 0; i < cur.length(); i++) {
+			char temp = chars[i];
+			for (char c = 'a'; c <= 'z'; c++) {
+				chars[i] = c;
+				String str = String.valueOf(chars);
+				if (c != temp && dict.contains(str) && !set1.contains(str)) {
+					res.add(str);
+				}
+			}
+			chars[i] = temp;
+		}
+		return res;
+	}
+	
+	/**
+	 * using dfs to find all possible paths from cur to target
+	 */
+	private List<String> dfsBuildPath(String begin, String cur, String end,
+			Map<String, String> beginGraph, Map<String, String> endGraph) {
+		List<String> list = new LinkedList<>();
+		String prev = beginGraph.get(cur);
+		while (prev != null) {
+			list.add(0, prev);
+			prev = beginGraph.get(prev);
+		}
+		
+		list.add(cur);
+		
+		String next = endGraph.get(cur);
+		while (next != null) {
+			list.add(next);
+			next = endGraph.get(next);
+		}
+		return list;
 	}
 	
 }
