@@ -34,7 +34,7 @@ import java.util.Queue;
  *  timeline[2] = 3
  *
  * output:
- *  [2, 0, 0]
+ *  [2, 0, 1]
  *
  * input: n = 2,
  *  prerequisites = [[1, 0], [0, 1]]
