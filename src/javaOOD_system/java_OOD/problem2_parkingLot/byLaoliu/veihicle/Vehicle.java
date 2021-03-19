@@ -9,7 +9,7 @@ import javaOOD_system.java_OOD.problem2_parkingLot.byLaoliu.VehicleType;
 //Author: Zeshi(Jesse) Yang
 //Date: 2020-09-03 星期四 20:07
 public abstract class Vehicle {
-	
+	private int id;
 	private VehicleType type; // protected, final
 	
 	public Vehicle(VehicleType type) {

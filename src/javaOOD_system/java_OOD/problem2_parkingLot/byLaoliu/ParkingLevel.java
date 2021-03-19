@@ -11,6 +11,7 @@ import javaOOD_system.java_OOD.problem2_parkingLot.byLaoliu.veihicle.Vehicle;
 public class ParkingLevel { //不要过度design
 	
 	// fields
+	private int id;
 	private final int floor;
 	private final ParkingSpot[] spots;
 	

@@ -26,9 +26,14 @@ public class Q13MergeKSortedArray {
 	}
 	
 	// Solution 1: use minHeap to find the min in the k nums
-	/**
-	 assuming k is rows, n is summed number of elements in all int[]
-	 T(k, n) = O(n * log(k)), S(n, m) = O(n)
+	// T(k, n) = O(n * log(k)), S(n, m) = O(n),
+	// assuming k is rows, n is summed number of elements in all int[]
+	/*
+	一共有k行，设置k个指针，每一行一个
+	k个被指向的元素里面，谁最小，就把谁取出来，然后这一行的指针指向这个元素后面的元素
+	 assign k points, point to k different elements, every row has 1 pointed elements
+	 among this k elements, add the smallest the elements to the res,
+	 and update the point to its next neighbor
 	 */
 	public static int[] mergeKSortedArrayByMinHeap(int[][] nums) {
 		if (nums == null || nums.length == 0 || nums[0] == null || nums[0].length == 0) {
@@ -37,19 +42,19 @@ public class Q13MergeKSortedArray {
 
 		PriorityQueue<Cell> minHeap = new PriorityQueue<>(nums.length);
 
-		int rows = 0;
+		int size = 0;
 		for (int i = 0; i < nums.length; i++) {
-			rows += nums[i].length;
+			size += nums[i].length;
 			if (nums[i] != null && nums[i].length != 0) {
 				minHeap.offer(new Cell(i, 0, nums[i][0]));
 			}
 		}
-		int[] res = new int[rows];
+		int[] res = new int[size];
 		int curIndex = 0;
 		while (!minHeap.isEmpty()) {
 			Cell curCell = minHeap.poll();
 			res[curIndex++] = curCell.val;
-			if (curCell.col + 1 < nums[curCell.row].length) {
+			if (curCell.col + 1 < nums[curCell.row].length) { // 保证这一行不会出界
 				minHeap.offer(new Cell(curCell.row, curCell.col + 1, nums[curCell.row][curCell.col + 1]));
 			}
 		}
@@ -74,10 +79,12 @@ public class Q13MergeKSortedArray {
 		
 	}
 	
+	// Solution 2: use binary merge to form the merged int[][]
+	// assuming k is rows, n is summed number of elements in all int[]
+	// T(k, n) = O(n * log(k)), S(n, m) = O(n)
 	/**
-	Solution 2: use binary merge to form the merged int[][]
-    assuming k is rows, n is summed number of elements in all int[]
-    T(k, n) = O(n * log(k)), S(n, m) = O(n)
+	先写出merge 两个sort int[]的方法
+	 然后1-2 merge，3-4merge，bottom up的方法重复merge，merge到只剩下1个int[] 数组
 	 */
 	public static int[] mergeKSortedArrayByBinaryMerge(int[][] nums) {
 		if (nums == null || nums.length == 0) {
@@ -119,4 +126,3 @@ public class Q13MergeKSortedArray {
 	}
 	
 }
-

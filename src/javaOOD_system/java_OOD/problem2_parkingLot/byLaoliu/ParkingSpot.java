@@ -11,6 +11,7 @@ import javaOOD_system.java_OOD.problem2_parkingLot.byLaoliu.veihicle.Vehicle;
 public class ParkingSpot {
 	
 	// fields
+	private int id;
 	private Vehicle cur;
 	private final VehicleType type;
 	
