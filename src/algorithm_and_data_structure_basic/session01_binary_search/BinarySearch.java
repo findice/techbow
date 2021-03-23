@@ -6,19 +6,14 @@ package algorithm_and_data_structure_basic.session01_binary_search;
 //Description:
 //Author: Zeshi(Jesse) Yang
 //Date: 2020-11-16 星期一 23:15
-
-/**
- * binary search
- */
 public class BinarySearch {
 	
 	//模板1：出循环时，left + 1 = right
 	public static int binarySearch1(int[] nums, int target) {
 		int left = 0;
 		int right = nums.length - 1;
-		int mid;
 		while (left + 1 < right) {
-			mid = left + (right - left) / 2;
+			int mid = left + (right - left) / 2;
 			if (nums[mid] == target) {
 				return mid;
 			} else if (nums[mid] < target) {
@@ -41,9 +36,8 @@ public class BinarySearch {
 	public static int binarySearch2(int[] nums, int target) {
 		int left = 0;
 		int right = nums.length; // 如果设置成len - 1,那nums[len - 1]这个点检查不到
-		int mid;
 		while (left < right) {
-			mid = left + (right - left) / 2;
+			int mid = left + (right - left) / 2;
 			if (nums[mid] == target) {
 				return mid;
 			} else if (nums[mid] < target) {
@@ -60,9 +54,8 @@ public class BinarySearch {
 	public static int binarySearch3(int[] nums, int target) {
 		int left = 0;
 		int right = nums.length - 1;
-		int mid;
 		while (left <= right) {
-			mid = left + (right - left) / 2;
+			int mid = left + (right - left) / 2;
 			if (nums[mid] == target) {
 				return mid;
 			} else if (nums[mid] < target) {

@@ -5,13 +5,12 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import org.junit.Test;
 
 public class DijkstraAlgorithmTest {
     List<Vertex> nodes;
     List<Edge> edges;
 
-    @Test
+    
     public void test1() {
         nodes = new ArrayList<>();
         edges = new ArrayList<>();
